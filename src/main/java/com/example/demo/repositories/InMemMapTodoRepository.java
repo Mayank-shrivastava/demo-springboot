@@ -13,8 +13,8 @@ import java.util.List;
 
 import com.example.demo.schema.Todo;
 
-@Repository
-@Profile("prod")
+@Repository("inMemMap")
+// @Profile("prod")
 // @Repository("inMemMap")
 // @Qualifier("inMemMap")
 // @Primary

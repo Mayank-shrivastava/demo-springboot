@@ -5,3 +5,6 @@ spring:
     name: demo
 server:
   port: ${PORT:8080}
+
+todo:
+  repository: ${TODO_REPOSITORY:inMemMap}
