@@ -31,4 +31,27 @@ public class InMemMapTodoRepository implements ITodoRepository {
     public List<Todo> findAll() {
         return new ArrayList<>(todos.values());
     }
+
+    @Override
+    public Todo save(Todo todo) {
+        todos.put(todo.getId(), todo);
+        return todo;
+    }
+
+    @Override
+    public Todo update(String id, Todo todo) {
+        for (String key : todos.keySet()) {
+            if (key.equals(id)) {
+                todos.put(key, todo);
+                return todo;
+            }
+        }
+
+        throw new IllegalArgumentException("Todo with id " + id + " not found");
+    }
+
+    @Override
+    public void delete(String id) {
+        todos.remove(id);
+    }
 }

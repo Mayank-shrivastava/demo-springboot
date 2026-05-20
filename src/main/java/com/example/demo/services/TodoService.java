@@ -35,4 +35,17 @@ public class TodoService {
         // Logic to retrieve all todos
         return todoRepository.findAll();
     }
+
+    public Todo createTodo(Todo todo) {
+        // Logic to create a new todo
+        return todoRepository.save(todo);
+    }
+
+    public Todo updateTodo(String id, Todo todo) {
+        return todoRepository.update(id, todo);
+    }
+
+    public void deleteTodo(String id) {
+        todoRepository.delete(id);
+    }
 }
